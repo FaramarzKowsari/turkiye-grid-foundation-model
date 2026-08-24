@@ -1,0 +1,14 @@
+# Türkiye Grid Foundation Model
+
+Official multilingual public research record by Faramarz Kowsari.
+
+Project: https://faramarzkowsari.github.io/turkiye-grid-foundation-model/
+Repository: https://github.com/FaramarzKowsari/turkiye-grid-foundation-model
+English guide: https://faramarzkowsari.github.io/turkiye-grid-foundation-model/en/
+Turkish guide: https://faramarzkowsari.github.io/turkiye-grid-foundation-model/tr/
+Spanish (Spain) guide: https://faramarzkowsari.github.io/turkiye-grid-foundation-model/es/
+Research status: https://faramarzkowsari.github.io/turkiye-grid-foundation-model/results.html
+
+Current status: v0.1 research scaffold. Software and synthetic smoke validation are implemented. No completed real-data confirmatory result, OSF preregistration or paper-level superiority claim is made yet.
+
+Research focus: shared temporal representation learning for electricity consumption, renewable generation and day-ahead PTF forecasting in Türkiye, with chronological evaluation, calibrated uncertainty and negative-transfer analysis.

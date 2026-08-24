@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://faramarzkowsari.github.io/turkiye-grid-foundation-model/sitemap.xml
