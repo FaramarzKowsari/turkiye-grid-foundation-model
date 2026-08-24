@@ -1,0 +1,29 @@
+seed: 2026
+data:
+  source: epias
+  timezone: Europe/Istanbul
+  context_hours: 168
+  horizons_hours: [1, 6, 24]
+  targets: [consumption_mwh, renewable_mwh, mcp_tl_mwh]
+  split: chronological
+  train_fraction: 0.70
+  validation_fraction: 0.15
+model:
+  family: multi_task_transformer
+  d_model: 128
+  nhead: 4
+  num_layers: 3
+  dim_feedforward: 256
+  dropout: 0.1
+training:
+  epochs: 30
+  batch_size: 128
+  learning_rate: 0.0003
+  early_stopping_patience: 5
+uncertainty:
+  native: gaussian_scale_head
+  calibration: split_conformal
+  nominal_coverage: 0.90
+reporting:
+  metrics: [mae, rmse, smape, interval_coverage]
+  preserve_negative_results: true

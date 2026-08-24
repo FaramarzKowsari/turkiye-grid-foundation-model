@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+<title id="title">Türkiye Grid Foundation Model</title><desc id="desc">Abstract electricity grid, temporal signals and AI representation.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#06101d"/><stop offset="1" stop-color="#102b42"/></linearGradient><linearGradient id="wave" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#5eead4"/><stop offset="1" stop-color="#60a5fa"/></linearGradient></defs>
+<rect width="1280" height="640" rx="28" fill="url(#bg)"/>
+<g opacity=".18" stroke="#7dd3fc" fill="none"><path d="M0 110H1280M0 210H1280M0 310H1280M0 410H1280M0 510H1280"/><path d="M120 0V640M320 0V640M520 0V640M720 0V640M920 0V640M1120 0V640"/></g>
+<g fill="#5eead4"><circle cx="945" cy="125" r="9"/><circle cx="1080" cy="195" r="8"/><circle cx="995" cy="285" r="10"/><circle cx="1140" cy="365" r="7"/><circle cx="900" cy="420" r="8"/></g>
+<g stroke="#5eead4" stroke-width="3" opacity=".8"><path d="M945 125L1080 195L995 285L1140 365L900 420L995 285L945 125" fill="none"/></g>
+<path d="M55 470 C145 390 190 525 275 420 S410 325 490 410 S625 530 710 400 S820 280 905 350" fill="none" stroke="url(#wave)" stroke-width="10" stroke-linecap="round"/>
+<text x="64" y="105" font-family="Inter,Segoe UI,sans-serif" font-size="28" font-weight="700" fill="#5eead4" letter-spacing="3">REPRODUCIBLE ENERGY AI · TÜRKİYE</text>
+<text x="64" y="190" font-family="Inter,Segoe UI,sans-serif" font-size="64" font-weight="800" fill="#ffffff">Türkiye Grid</text>
+<text x="64" y="260" font-family="Inter,Segoe UI,sans-serif" font-size="64" font-weight="800" fill="#ffffff">Foundation Model</text>
+<text x="64" y="325" font-family="Inter,Segoe UI,sans-serif" font-size="27" fill="#c9d7e4">Load · Renewables · Day-Ahead Price · Calibrated Uncertainty</text>
+<text x="64" y="584" font-family="Inter,Segoe UI,sans-serif" font-size="24" fill="#9fb3c8">Faramarz Kowsari · Research software v0.1.0</text>
+</svg>

@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this research software, please cite the repository release once a DOI is available."
+title: "Türkiye Grid Foundation Model"
+type: software
+authors:
+  - family-names: "Kowsari"
+    given-names: "Faramarz"
+    orcid: "https://orcid.org/0000-0003-1692-0453"
+repository-code: "https://github.com/FaramarzKowsari/turkiye-grid-foundation-model"
+url: "https://faramarzkowsari.github.io/turkiye-grid-foundation-model/"
+version: "0.1.0"
+date-released: "2026-08-23"
+license: MIT

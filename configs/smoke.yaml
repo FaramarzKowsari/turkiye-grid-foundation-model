@@ -1,0 +1,14 @@
+seed: 7
+data:
+  source: synthetic
+  context_hours: 48
+  horizons_hours: [1, 6, 24]
+model:
+  d_model: 32
+  nhead: 4
+  num_layers: 1
+  dim_feedforward: 64
+training:
+  epochs: 1
+  batch_size: 32
+  learning_rate: 0.001
