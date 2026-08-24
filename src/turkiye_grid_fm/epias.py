@@ -7,7 +7,7 @@ from typing import Any
 
 import httpx
 
-CAS_URL = "https://cas.epias.com.tr/cas/v1/tickets"
+CAS_URL = "https://giris.epias.com.tr/cas/v1/tickets"
 API_BASE = "https://seffaflik.epias.com.tr/electricity-service"
 
 ENDPOINTS = {
@@ -25,7 +25,7 @@ class EpiasError(RuntimeError):
 class EpiasClient:
     username: str
     password: str
-    timeout: float = 30.0
+    timeout: float = 45.0
     page_size: int = 1000
     max_pages: int = 100
     transport: httpx.BaseTransport | None = None
@@ -41,7 +41,12 @@ class EpiasClient:
         return cls(username=username, password=password)
 
     def _client(self) -> httpx.Client:
-        return httpx.Client(timeout=self.timeout, transport=self.transport)
+        return httpx.Client(
+            timeout=self.timeout,
+            transport=self.transport,
+            follow_redirects=True,
+            headers={"User-Agent": "turkiye-grid-foundation-model/0.2-data-audit"},
+        )
 
     def get_tgt(self) -> str:
         with self._client() as client:
@@ -54,7 +59,10 @@ class EpiasClient:
                 },
             )
         if response.status_code != 200:
-            raise EpiasError(f"EPİAŞ CAS authentication failed: HTTP {response.status_code}")
+            raise EpiasError(
+                f"EPİAŞ CAS authentication failed: HTTP {response.status_code}. "
+                "Check Transparency Platform registration/credentials."
+            )
         tgt = response.text.strip().strip('"')
         if not tgt.startswith("TGT-"):
             raise EpiasError("EPİAŞ CAS returned an unexpected TGT response.")
@@ -76,6 +84,7 @@ class EpiasClient:
     ) -> list[dict[str, Any]]:
         if dataset not in ENDPOINTS:
             raise ValueError(f"Unknown dataset {dataset!r}; choose from {sorted(ENDPOINTS)}")
+
         tgt = tgt or self.get_tgt()
         endpoint = API_BASE + ENDPOINTS[dataset]
         all_items: list[dict[str, Any]] = []
@@ -97,13 +106,14 @@ class EpiasClient:
                     headers={
                         "TGT": tgt,
                         "Accept": "application/json",
+                        "Accept-Language": "en",
                         "Content-Type": "application/json",
                     },
                 )
                 if response.status_code != 200:
                     raise EpiasError(
                         f"EPİAŞ {dataset} request failed: HTTP {response.status_code}: "
-                        f"{response.text[:300]}"
+                        f"{response.text[:500]}"
                     )
                 body = response.json()
                 items = body.get("items", []) if isinstance(body, dict) else []
@@ -116,4 +126,5 @@ class EpiasClient:
                 raise EpiasError(
                     f"Pagination reached max_pages={self.max_pages}; narrow the requested date range."
                 )
+
         return all_items

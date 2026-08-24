@@ -1,0 +1,11 @@
+{
+  "phase": "v0.2a-first-bounded-real-data-audit",
+  "scientific_status": "exploratory-data-audit-only",
+  "audit_start": "2024-01-01T00:00:00+03:00",
+  "audit_end": "2024-01-31T23:00:00+03:00",
+  "expected_hours": 744,
+  "datasets": ["consumption", "generation", "mcp"],
+  "confirmatory_holdout": "UNDEFINED_AND_NOT_REQUESTED",
+  "guardrail": "The v0.2a audit runner refuses date overrides and requests only the locked January 2024 window.",
+  "raw_data_commit_policy": "Raw and processed EPİAŞ records remain gitignored. Only aggregate audit outputs, provenance metadata and cryptographic hashes may be committed."
+}
