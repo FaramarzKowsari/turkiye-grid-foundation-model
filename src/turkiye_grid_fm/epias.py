@@ -58,14 +58,20 @@ class EpiasClient:
                     "Accept": "text/plain",
                 },
             )
-        if response.status_code != 200:
+        if response.status_code not in (200, 201):
             raise EpiasError(
                 f"EPİAŞ CAS authentication failed: HTTP {response.status_code}. "
                 "Check Transparency Platform registration/credentials."
             )
         tgt = response.text.strip().strip('"')
         if not tgt.startswith("TGT-"):
-            raise EpiasError("EPİAŞ CAS returned an unexpected TGT response.")
+            location = response.headers.get("Location", "")
+            if location:
+                tgt = location.rstrip("/").split("/")[-1]
+        if not tgt.startswith("TGT-"):
+            raise EpiasError(
+                "EPİAŞ CAS returned HTTP success but no TGT was found in body or Location header."
+            )
         return tgt
 
     @staticmethod
@@ -110,7 +116,7 @@ class EpiasClient:
                         "Content-Type": "application/json",
                     },
                 )
-                if response.status_code != 200:
+                if response.status_code not in (200, 201):
                     raise EpiasError(
                         f"EPİAŞ {dataset} request failed: HTTP {response.status_code}: "
                         f"{response.text[:500]}"
