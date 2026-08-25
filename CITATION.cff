@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this research software, please cite the repository release once a DOI is available."
+message: "If you use this research software, please cite the archived Zenodo release and associated research outputs when available."
 title: "Türkiye Grid Foundation Model"
 type: software
 authors:
@@ -8,6 +8,25 @@ authors:
     orcid: "https://orcid.org/0000-0003-1692-0453"
 repository-code: "https://github.com/FaramarzKowsari/turkiye-grid-foundation-model"
 url: "https://faramarzkowsari.github.io/turkiye-grid-foundation-model/"
-version: "0.1.0"
-date-released: "2026-08-23"
+version: "0.2.1"
+date-released: "2026-08-25"
 license: MIT
+keywords:
+  - artificial intelligence
+  - electricity forecasting
+  - multi-task learning
+  - time series
+  - EPİAŞ
+  - Türkiye
+  - renewable energy
+  - electricity markets
+  - uncertainty quantification
+  - conformal prediction
+  - reproducible research
+abstract: >-
+  Open and reproducible research software for studying cross-task transfer
+  across electricity consumption, renewable generation and day-ahead market
+  price in Türkiye using official EPİAŞ Transparency Platform data. The
+  repository includes chronological forecasting infrastructure, uncertainty
+  calibration, empirical data-audit provenance and an open-science publication
+  workflow.
