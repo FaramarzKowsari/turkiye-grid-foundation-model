@@ -1,0 +1,59 @@
+{
+  "audit_id": "2024-01-v0.2a.1",
+  "status": "corrective-exploratory-audit-only",
+  "generated_utc": "2026-08-25T14:09:46.391699+00:00",
+  "new_epias_requests": 0,
+  "confirmatory_holdout": "UNDEFINED_AND_NOT_REQUESTED",
+  "generation_snapshot_sha256": "63afec4aed0c73bef2b374ae356e3e1914d85be23f167a90b7db8682fb7ff344",
+  "available_generation_sources": [
+    "fueloil",
+    "blackCoal",
+    "lignite",
+    "geothermal",
+    "naturalGas",
+    "river",
+    "dammedHydro",
+    "lng",
+    "biomass",
+    "naphta",
+    "importCoal",
+    "asphaltiteCoal",
+    "wind",
+    "sun",
+    "wasteheat"
+  ],
+  "importExport_present": true,
+  "closure_diagnostics": {
+    "excluding_importExport": {
+      "n": 744,
+      "mean_residual_mwh": -88.34579301075323,
+      "mae_residual_mwh": 121.43944892473169,
+      "p95_abs_residual_mwh": 274.6965000000008,
+      "max_abs_residual_mwh": 380.369999999999
+    },
+    "adding_importExport": {
+      "n": 744,
+      "mean_residual_mwh": -4.4985759442531935e-13,
+      "mae_residual_mwh": 3.3641524452676054e-12,
+      "p95_abs_residual_mwh": 7.275957614183426e-12,
+      "max_abs_residual_mwh": 1.4551915228366852e-11
+    },
+    "subtracting_importExport": {
+      "n": 744,
+      "mean_residual_mwh": -176.69158602150603,
+      "mae_residual_mwh": 242.87889784946287,
+      "p95_abs_residual_mwh": 549.3930000000016,
+      "max_abs_residual_mwh": 760.739999999998
+    }
+  },
+  "best_internal_closure_convention_by_mae": "adding_importExport",
+  "negative_sun_diagnostic": {
+    "negative_count": 2,
+    "minimum_sun_mwh": -0.01,
+    "negative_abs_sum_mwh": 0.02,
+    "timestamps": [
+      "2024-01-04T18:00:00+03:00",
+      "2024-01-13T18:00:00+03:00"
+    ]
+  }
+}
