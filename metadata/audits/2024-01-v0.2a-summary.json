@@ -1,0 +1,261 @@
+{
+  "audit_id": "2024-01-v0.2a",
+  "phase": "exploratory-data-audit-only",
+  "retrieval_utc": "2026-08-25T13:44:01.208005+00:00",
+  "audit_start": "2024-01-01T00:00:00+03:00",
+  "audit_end": "2024-01-31T23:00:00+03:00",
+  "expected_hours": 744,
+  "confirmatory_holdout": "UNDEFINED_AND_NOT_REQUESTED",
+  "cas_url": "https://giris.epias.com.tr/cas/v1/tickets",
+  "api_base": "https://seffaflik.epias.com.tr/electricity-service",
+  "endpoints": {
+    "consumption": "/v1/consumption/data/realtime-consumption",
+    "generation": "/v1/generation/data/realtime-generation",
+    "mcp": "/v1/markets/dam/data/mcp"
+  },
+  "environment": {
+    "python": "3.13.0",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "pandas": "2.3.3",
+    "numpy": "2.5.2"
+  },
+  "raw_sha256": {
+    "consumption": "49a528ee6ffbd3c1a2717cddc7bbbb311a5c4a52a6a0379ea05dc1f2fc9ddc18",
+    "generation": "63afec4aed0c73bef2b374ae356e3e1914d85be23f167a90b7db8682fb7ff344",
+    "mcp": "1853a77aa7ef96d7ecbc7bfef0896e151954251e2dae54318b06043fde452513"
+  },
+  "processed_sha256": "d0cc98d066fafcd71868b876a2b44dc292a5c597f6c0df3661a0e4620741b512",
+  "quality": {
+    "consumption": {
+      "dataset": "consumption",
+      "raw_rows": 744,
+      "unique_timestamps": 744,
+      "duplicates": 0,
+      "missing_expected_hours": 0,
+      "coverage_pct": 100.0,
+      "outside_scope_timestamps": 0,
+      "key_field": "consumption",
+      "key_numeric_nulls": 0,
+      "first_timestamp_utc": "2023-12-31T21:00:00+00:00",
+      "last_timestamp_utc": "2024-01-31T20:00:00+00:00",
+      "max_gap_hours": 1.0,
+      "timezone_suffixes": [
+        "+03:00"
+      ],
+      "schema_fields": [
+        "consumption",
+        "date",
+        "time"
+      ],
+      "missing_examples_utc": []
+    },
+    "generation": {
+      "dataset": "generation",
+      "raw_rows": 744,
+      "unique_timestamps": 744,
+      "duplicates": 0,
+      "missing_expected_hours": 0,
+      "coverage_pct": 100.0,
+      "outside_scope_timestamps": 0,
+      "key_field": "total",
+      "key_numeric_nulls": 0,
+      "first_timestamp_utc": "2023-12-31T21:00:00+00:00",
+      "last_timestamp_utc": "2024-01-31T20:00:00+00:00",
+      "max_gap_hours": 1.0,
+      "timezone_suffixes": [
+        "+03:00"
+      ],
+      "schema_fields": [
+        "asphaltiteCoal",
+        "biomass",
+        "blackCoal",
+        "dammedHydro",
+        "date",
+        "fueloil",
+        "geothermal",
+        "hour",
+        "importCoal",
+        "importExport",
+        "lignite",
+        "lng",
+        "naphta",
+        "naturalGas",
+        "river",
+        "sun",
+        "total",
+        "wasteheat",
+        "wind"
+      ],
+      "missing_examples_utc": []
+    },
+    "mcp": {
+      "dataset": "mcp",
+      "raw_rows": 744,
+      "unique_timestamps": 744,
+      "duplicates": 0,
+      "missing_expected_hours": 0,
+      "coverage_pct": 100.0,
+      "outside_scope_timestamps": 0,
+      "key_field": "price",
+      "key_numeric_nulls": 0,
+      "first_timestamp_utc": "2023-12-31T21:00:00+00:00",
+      "last_timestamp_utc": "2024-01-31T20:00:00+00:00",
+      "max_gap_hours": 1.0,
+      "timezone_suffixes": [
+        "+03:00"
+      ],
+      "schema_fields": [
+        "date",
+        "hour",
+        "price",
+        "priceEur",
+        "priceUsd"
+      ],
+      "missing_examples_utc": []
+    }
+  },
+  "aligned_rows": 744,
+  "complete_core_target_rows": 744,
+  "numeric_summary": [
+    {
+      "variable": "consumption_mwh",
+      "n": 744,
+      "mean": 38873.30944892472,
+      "std": 5767.913407216269,
+      "min": 24610.5,
+      "p05": 30137.229499999998,
+      "median": 39592.630000000005,
+      "p95": 46900.830500000004,
+      "max": 48394.39
+    },
+    {
+      "variable": "renewable_mwh",
+      "n": 744,
+      "mean": 19081.383051075267,
+      "std": 3440.859442840889,
+      "min": 10398.19,
+      "p05": 12745.366,
+      "median": 19116.315000000002,
+      "p95": 24406.331999999995,
+      "max": 26093.289999999997
+    },
+    {
+      "variable": "total_generation_mwh",
+      "n": 744,
+      "mean": 37898.71858870968,
+      "std": 5400.052719586007,
+      "min": 24536.76,
+      "p05": 29426.1515,
+      "median": 38574.884999999995,
+      "p95": 45589.784,
+      "max": 47992.46
+    },
+    {
+      "variable": "renewable_share",
+      "n": 744,
+      "mean": 0.5046106187368461,
+      "std": 0.06834779703516268,
+      "min": 0.35013823191434085,
+      "p05": 0.39612720064680673,
+      "median": 0.5026570213025873,
+      "p95": 0.6246092219600924,
+      "max": 0.6732087555578129
+    },
+    {
+      "variable": "mcp_tl_mwh",
+      "n": 744,
+      "mean": 1942.9048655913978,
+      "std": 626.9530093115219,
+      "min": 102.26,
+      "p05": 900.0,
+      "median": 2180.98,
+      "p95": 2689.0,
+      "max": 2700.0
+    }
+  ],
+  "generation_diagnostics": {
+    "available_source_columns": [
+      "fueloil",
+      "blackCoal",
+      "lignite",
+      "geothermal",
+      "naturalGas",
+      "river",
+      "dammedHydro",
+      "lng",
+      "biomass",
+      "naphta",
+      "importCoal",
+      "asphaltiteCoal",
+      "wind",
+      "sun",
+      "wasteheat"
+    ],
+    "closure_n": 744,
+    "closure_mean_residual_mwh": -88.34579301075323,
+    "closure_mean_abs_residual_mwh": 121.43944892473169,
+    "closure_max_abs_residual_mwh": 380.369999999999,
+    "negative_source_counts": {
+      "fueloil": 0,
+      "blackCoal": 0,
+      "lignite": 0,
+      "geothermal": 0,
+      "naturalGas": 0,
+      "river": 0,
+      "dammedHydro": 0,
+      "lng": 0,
+      "biomass": 0,
+      "naphta": 0,
+      "importCoal": 0,
+      "asphaltiteCoal": 0,
+      "wind": 0,
+      "sun": 2,
+      "wasteheat": 0
+    }
+  },
+  "anomaly_diagnostics": {
+    "consumption_nonpositive": 0,
+    "renewable_negative": 0,
+    "renewable_share_outside_0_1": 0,
+    "mcp_negative": 0,
+    "mcp_zero": 0,
+    "iqr_flags": {
+      "consumption_mwh": {
+        "n": 744,
+        "low": 18419.056250000016,
+        "high": 59057.20624999998,
+        "flagged": 0
+      },
+      "renewable_mwh": {
+        "n": 744,
+        "low": 9531.396249999989,
+        "high": 29262.186250000013,
+        "flagged": 0
+      },
+      "mcp_tl_mwh": {
+        "n": 744,
+        "low": -248.33124999999995,
+        "high": 4013.85875,
+        "flagged": 0
+      }
+    }
+  },
+  "descriptive_correlations": {
+    "consumption_mwh": {
+      "consumption_mwh": 1.0,
+      "renewable_mwh": 0.675456331716828,
+      "mcp_tl_mwh": 0.6778124298776993
+    },
+    "renewable_mwh": {
+      "consumption_mwh": 0.675456331716828,
+      "renewable_mwh": 1.0,
+      "mcp_tl_mwh": 0.1896424799950183
+    },
+    "mcp_tl_mwh": {
+      "consumption_mwh": 0.6778124298776993,
+      "renewable_mwh": 0.1896424799950183,
+      "mcp_tl_mwh": 1.0
+    }
+  },
+  "claims_boundary": "No model-comparison or confirmatory claim is made. Descriptive correlations and outlier flags are exploratory only."
+}
