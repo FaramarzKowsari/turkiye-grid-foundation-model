@@ -9,6 +9,7 @@ authors:
 repository-code: "https://github.com/FaramarzKowsari/turkiye-grid-foundation-model"
 url: "https://faramarzkowsari.github.io/turkiye-grid-foundation-model/"
 version: "0.2.1"
+doi: "10.5281/zenodo.22102736"
 date-released: "2026-08-25"
 license: MIT
 keywords:

@@ -13,7 +13,7 @@
   <img alt="Python" src="https://img.shields.io/badge/Python-3.11%2B-3776AB">
   <img alt="EPİAŞ" src="https://img.shields.io/badge/Data-EP%C4%B0A%C5%9E%20Transparency-0A7C6A">
   <img alt="No paid AI API" src="https://img.shields.io/badge/Paid%20AI%20API-Not%20Required-168D73">
-  <img alt="Status" src="https://img.shields.io/badge/Status-Research%20Scaffold%20v0.1.0-orange">
+  <img alt="Status" src="https://img.shields.io/badge/Status-Research%20Platform%20v0.2.1-blue">
   <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/License-MIT-green"></a>
 </p>
 
@@ -22,6 +22,16 @@
   <a href="docs/researcher-guide.html">Researcher Guide EN · TR · ES</a> · <a href="RESEARCH_PROTOCOL.md">Research protocol</a> · <a href="paper/MANUSCRIPT_DRAFT.md">Paper scaffold</a>
 </p>
 
+
+## Zenodo DOI
+
+[![DOI](https://zenodo.org/badge/1344196733.svg)](https://doi.org/10.5281/zenodo.22102735)
+
+- **Version v0.2.1 DOI:** [10.5281/zenodo.22102736](https://doi.org/10.5281/zenodo.22102736)
+- **Concept DOI — all versions:** [10.5281/zenodo.22102735](https://doi.org/10.5281/zenodo.22102735)
+- **GitHub Release:** [v0.2.1](https://github.com/FaramarzKowsari/turkiye-grid-foundation-model/releases/tag/v0.2.1)
+
+Use the version DOI for the exact archived v0.2.1 snapshot and the Concept DOI for the continuing project.
 > **Scientific-status boundary — 23 August 2026:** this repository contains a tested research software scaffold and a proposed experimental design. It does **not** yet contain a completed EPİAŞ research dataset, a frozen confirmatory run, a preregistered hypothesis test, or paper-level empirical results. Synthetic data are used only for CI and pipeline validation. No performance claim is made until a real-data experiment is executed and preserved.
 
 ---

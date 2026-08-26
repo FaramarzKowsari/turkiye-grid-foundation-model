@@ -12,3 +12,6 @@ Research status: https://faramarzkowsari.github.io/turkiye-grid-foundation-model
 Current status: v0.1 research scaffold. Software and synthetic smoke validation are implemented. No completed real-data confirmatory result, OSF preregistration or paper-level superiority claim is made yet.
 
 Research focus: shared temporal representation learning for electricity consumption, renewable generation and day-ahead PTF forecasting in Türkiye, with chronological evaluation, calibrated uncertainty and negative-transfer analysis.
+
+Zenodo v0.2.1 DOI: https://doi.org/10.5281/zenodo.22102736
+Zenodo Concept DOI: https://doi.org/10.5281/zenodo.22102735
