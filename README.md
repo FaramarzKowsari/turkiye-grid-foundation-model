@@ -32,7 +32,7 @@
 - **GitHub Release:** [v0.2.1](https://github.com/FaramarzKowsari/turkiye-grid-foundation-model/releases/tag/v0.2.1)
 
 Use the version DOI for the exact archived v0.2.1 snapshot and the Concept DOI for the continuing project.
-> **Scientific-status boundary — 23 August 2026:** this repository contains a tested research software scaffold and a proposed experimental design. It does **not** yet contain a completed EPİAŞ research dataset, a frozen confirmatory run, a preregistered hypothesis test, or paper-level empirical results. Synthetic data are used only for CI and pipeline validation. No performance claim is made until a real-data experiment is executed and preserved.
+> **Scientific-status boundary — 26 August 2026:** this repository now includes an empirical EPİAŞ data audit for January 2024 and a corrective generation-accounting audit, both exploratory and provenance-preserved. The locked interval contains 744 aligned hourly observations for consumption, source-level generation and MCP/PTF, with zero missing expected timestamps, duplicates or key numeric nulls. Generation accounting reconciles to numerical precision when `importExport` is included, and two tiny `sun = -0.01 MWh` observations are documented without deletion or clipping. These audits validate data availability, integrity and accounting semantics; they do **not** establish forecasting superiority. The confirmatory holdout remains undefined and untouched, and no preregistered confirmatory model-comparison or paper-level forecasting claim is asserted.
 
 ---
 

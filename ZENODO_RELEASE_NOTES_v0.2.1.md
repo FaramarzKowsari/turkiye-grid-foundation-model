@@ -20,6 +20,11 @@ This release marks the first Zenodo-ready software snapshot of Türkiye Grid Fou
 ### Research boundary
 This is a software/research-infrastructure release. It does not claim confirmatory forecasting superiority or final model-performance results.
 
+
+### Persistent identifiers
+- Version DOI: https://doi.org/10.5281/zenodo.22102736
+- Concept DOI (all versions): https://doi.org/10.5281/zenodo.22102735
+
 ### Project website
 https://faramarzkowsari.github.io/turkiye-grid-foundation-model/
 
