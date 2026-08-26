@@ -1,8 +1,18 @@
 # Research Protocol — Draft Before Preregistration
 
-**Status:** design draft, not preregistered.  
-**Repository version:** v0.1.0 scaffold.  
-**Date:** 23 August 2026.
+**Status:** confirmatory design draft; lifecycle state registered on OSF, but the confirmatory protocol is not yet preregistered.  
+**Repository version:** v0.2.1 empirical open-science milestone.  
+**Date:** 26 August 2026.
+
+
+## Open-science lifecycle record
+
+- OSF Registration DOI: https://doi.org/10.17605/OSF.IO/FMCYQ
+- Associated OSF project: https://osf.io/tz5pw
+- Zenodo v0.2.1 DOI: https://doi.org/10.5281/zenodo.22102736
+- Zenodo Concept DOI: https://doi.org/10.5281/zenodo.22102735
+
+This lifecycle registration is **not** the final confirmatory preregistration. The exact confirmatory target/horizon, model set, seed policy, inference procedure and holdout remain to be frozen before confirmatory evaluation.
 
 ## Working paper title
 

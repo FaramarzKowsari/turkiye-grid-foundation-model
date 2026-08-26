@@ -15,3 +15,8 @@ Research focus: shared temporal representation learning for electricity consumpt
 
 Zenodo v0.2.1 DOI: https://doi.org/10.5281/zenodo.22102736
 Zenodo Concept DOI: https://doi.org/10.5281/zenodo.22102735
+
+OSF Open-Ended Registration DOI: https://doi.org/10.17605/OSF.IO/FMCYQ
+Associated OSF project: https://osf.io/tz5pw
+OSF registration status: accepted and public
+The OSF lifecycle registration is not the final confirmatory preregistration; the confirmatory holdout remains undefined and untouched.
