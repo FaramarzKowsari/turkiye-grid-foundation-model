@@ -30,14 +30,14 @@
 [![OSF Registration](https://img.shields.io/badge/OSF-Open--Ended%20Registration-2CB9F1)](https://doi.org/10.17605/OSF.IO/FMCYQ)
 
 - **Zenodo version v0.2.1 DOI:** [10.5281/zenodo.22102736](https://doi.org/10.5281/zenodo.22102736)
-- **Zenodo Concept DOI â€” all versions:** [10.5281/zenodo.22102735](https://doi.org/10.5281/zenodo.22102735)
+- **Zenodo Concept DOI — all versions:** [10.5281/zenodo.22102735](https://doi.org/10.5281/zenodo.22102735)
 - **OSF Open-Ended Registration DOI:** [10.17605/OSF.IO/FMCYQ](https://doi.org/10.17605/OSF.IO/FMCYQ)
 - **Associated OSF project:** [osf.io/tz5pw](https://osf.io/tz5pw)
 - **GitHub Release:** [v0.2.1](https://github.com/FaramarzKowsari/turkiye-grid-foundation-model/releases/tag/v0.2.1)
 
 The Zenodo **version DOI** identifies the exact archived v0.2.1 software snapshot. The Zenodo **Concept DOI** identifies the continuing software record across versions. The **OSF Registration DOI** identifies the accepted public lifecycle registration documenting the current evidence boundary and open-science plan. This OSF record is not the future confirmatory preregistration; the confirmatory holdout remains undefined and untouched.
 
-See [`OPEN_SCIENCE.md`](OPEN_SCIENCE.md) for the complete GitHub â†’ Zenodo â†’ OSF evidence chain.
+See [`OPEN_SCIENCE.md`](OPEN_SCIENCE.md) for the complete GitHub → Zenodo → OSF evidence chain.
 > **Scientific-status boundary — 26 August 2026:** this repository now includes an empirical EPİAŞ data audit for January 2024 and a corrective generation-accounting audit, both exploratory and provenance-preserved. The locked interval contains 744 aligned hourly observations for consumption, source-level generation and MCP/PTF, with zero missing expected timestamps, duplicates or key numeric nulls. Generation accounting reconciles to numerical precision when `importExport` is included, and two tiny `sun = -0.01 MWh` observations are documented without deletion or clipping. These audits validate data availability, integrity and accounting semantics; they do **not** establish forecasting superiority. The confirmatory holdout remains undefined and untouched, and no preregistered confirmatory model-comparison or paper-level forecasting claim is asserted.
 
 ---
