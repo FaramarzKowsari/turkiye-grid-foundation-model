@@ -1,7 +1,12 @@
 import numpy as np
 import pytest
 
-from turkiye_grid_fm.journal_metrics import interval_rows, metric_rows, output_index, skill_against
+from turkiye_grid_fm.journal_metrics import (
+    interval_rows,
+    metric_rows,
+    output_index,
+    skill_against,
+)
 
 
 def test_output_index_is_horizon_major():

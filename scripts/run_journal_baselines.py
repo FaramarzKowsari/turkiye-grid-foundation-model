@@ -41,7 +41,9 @@ def truth_matrix(values: np.ndarray, origins: np.ndarray) -> np.ndarray:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Run journal-grade exploratory temporal baselines.")
+    parser = argparse.ArgumentParser(
+        description="Run journal-grade exploratory temporal baselines."
+    )
     parser.add_argument("--data", default="data/processed/exploratory_2021_2025.csv")
     parser.add_argument("--out-dir", default="artifacts/journal_v03")
     args = parser.parse_args()
@@ -57,7 +59,8 @@ def main() -> None:
     gaps = idx.to_series().diff().dropna().dt.total_seconds().div(3600)
     if (gaps != 1.0).any():
         raise SystemExit(
-            "Exploratory history is not fully contiguous. Review availability_audit.json before modeling."
+            "Exploratory history is not fully contiguous. "
+            "Review availability_audit.json before modeling."
         )
 
     values = complete[TARGETS].to_numpy(dtype=float)
@@ -109,7 +112,9 @@ def main() -> None:
         "baseline_inference_seconds": timing,
         "warning": "These are exploratory baseline results, not confirmatory evidence.",
     }
-    (out_dir / "baseline_run_summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
+    (out_dir / "baseline_run_summary.json").write_text(
+        json.dumps(summary, indent=2), encoding="utf-8"
+    )
     print(metrics.to_string(index=False))
     print(json.dumps(summary, indent=2))
 

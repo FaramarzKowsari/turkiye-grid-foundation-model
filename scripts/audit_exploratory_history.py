@@ -4,7 +4,6 @@ import argparse
 import json
 from pathlib import Path
 
-import numpy as np
 import pandas as pd
 
 KEY_COLUMNS = ["consumption_mwh", "renewable_mwh", "mcp_tl_mwh"]
@@ -41,7 +40,9 @@ def main() -> None:
             "missing_between_first_last": int(len(expected_month.difference(idx))),
         }
         for col in KEY_COLUMNS:
-            row[f"{col}_nulls"] = int(group[col].isna().sum()) if col in group else int(len(group))
+            row[f"{col}_nulls"] = (
+                int(group[col].isna().sum()) if col in group else int(len(group))
+            )
         row["complete_three_target_rows"] = int(group[KEY_COLUMNS].dropna().shape[0])
         monthly.append(row)
 
@@ -63,7 +64,9 @@ def main() -> None:
 
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
-    (out_dir / "availability_audit.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
+    (out_dir / "availability_audit.json").write_text(
+        json.dumps(report, indent=2), encoding="utf-8"
+    )
     pd.DataFrame(monthly).to_csv(out_dir / "monthly_coverage.csv", index=False)
 
     print(json.dumps(report, indent=2))
