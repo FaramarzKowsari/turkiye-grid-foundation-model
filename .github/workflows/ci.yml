@@ -28,6 +28,8 @@ jobs:
           scripts/fetch_exploratory_history.py
           scripts/audit_exploratory_history.py
           scripts/run_journal_baselines.py
+          scripts/run_journal_learned_evidence.py
+          tests/test_journal_learned_helpers.py
       - name: Tests
         run: pytest
       - name: Smoke train
