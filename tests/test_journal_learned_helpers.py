@@ -1,5 +1,6 @@
 from importlib.util import module_from_spec, spec_from_file_location
 from pathlib import Path
+import sys
 
 import numpy as np
 
@@ -16,6 +17,7 @@ if SPEC is None or SPEC.loader is None:
     raise RuntimeError("Could not load learned-evidence script for helper tests.")
 
 MODULE = module_from_spec(SPEC)
+sys.modules[SPEC.name] = MODULE
 SPEC.loader.exec_module(MODULE)
 
 CONTEXT = MODULE.CONTEXT
