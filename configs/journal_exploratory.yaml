@@ -1,0 +1,70 @@
+status: exploratory_only
+journal_target: IEEE Transactions on Power Systems
+cost_constraint:
+  publication_route: traditional
+  oa_apc_usd: 0
+  first_submission_max_ieee_pages: 10
+  final_target_max_published_pages: 12
+
+data:
+  source: epias
+  timezone: Europe/Istanbul
+  exploratory_start: "2021-01-01T00:00:00+03:00"
+  exploratory_end: "2025-12-31T23:00:00+03:00"
+  hard_stop_before: "2026-01-01T00:00:00+03:00"
+  chunk: month
+  context_hours: 168
+  horizons_hours: [1, 6, 24]
+  targets: [consumption_mwh, renewable_mwh, mcp_tl_mwh]
+
+exploratory_split:
+  method: chronological_forecast_origins
+  train_fraction: 0.70
+  validation_fraction: 0.15
+  exploratory_evaluation_fraction: 0.15
+  confirmatory_holdout: UNDEFINED_AND_NOT_REQUESTED
+
+baselines:
+  - persistence
+  - seasonal_naive_24
+  - seasonal_naive_168
+
+reporting:
+  point_metrics: [mae, rmse, smape]
+  report_per_target_per_horizon: true
+  prohibit_cross_unit_primary_average: true
+  preserve_per_origin_predictions: true
+
+future_learned_comparison:
+  isolated_task_encoder: planned
+  shared_multi_task_transformer: existing
+  exploratory_seeds: [2026, 2027, 2028]
+  final_confirmatory_seeds: NOT_FROZEN
+
+uncertainty:
+  native: gaussian_scale_head
+  calibration: split_conformal
+  nominal_coverage: 0.90
+  report: [empirical_coverage, mean_interval_width]
+
+regimes:
+  thresholds_from_training_only: true
+  candidates:
+    - renewable_share_quantiles
+    - demand_level_quantiles
+    - absolute_one_hour_demand_ramp
+    - mcp_extreme_price_indicator
+
+compute_audit:
+  required: true
+  measures:
+    - training_seconds
+    - inference_seconds
+    - trainable_parameters
+    - output_artifact_bytes
+
+research_boundary:
+  no_2026_requests: true
+  confirmatory_protocol_registered: false
+  confirmatory_holdout_defined: false
+  confirmatory_holdout_touched: false

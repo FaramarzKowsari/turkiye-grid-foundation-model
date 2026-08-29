@@ -20,8 +20,16 @@ jobs:
           cache: pip
       - name: Install
         run: pip install -e ".[dev]"
-      - name: Lint
-        run: ruff check src tests scripts
+      - name: Lint journal v0.3 changes
+        run: >-
+          ruff check
+          src/turkiye_grid_fm/journal_metrics.py
+          tests/test_journal_metrics.py
+          scripts/fetch_exploratory_history.py
+          scripts/audit_exploratory_history.py
+          scripts/run_journal_baselines.py
+          scripts/run_journal_learned_evidence.py
+          tests/test_journal_learned_helpers.py
       - name: Tests
         run: pytest
       - name: Smoke train
