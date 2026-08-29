@@ -1,12 +1,28 @@
+from importlib.util import module_from_spec, spec_from_file_location
+from pathlib import Path
+
 import numpy as np
 
-from scripts.run_journal_learned_evidence import (
-    CONTEXT,
-    HORIZONS,
-    build_split_origins,
-    daily_block_bootstrap,
-    output_column,
+MODULE_PATH = (
+    Path(__file__).resolve().parents[1]
+    / "scripts"
+    / "run_journal_learned_evidence.py"
 )
+SPEC = spec_from_file_location(
+    "tgfm_run_journal_learned_evidence",
+    MODULE_PATH,
+)
+if SPEC is None or SPEC.loader is None:
+    raise RuntimeError("Could not load learned-evidence script for helper tests.")
+
+MODULE = module_from_spec(SPEC)
+SPEC.loader.exec_module(MODULE)
+
+CONTEXT = MODULE.CONTEXT
+HORIZONS = MODULE.HORIZONS
+build_split_origins = MODULE.build_split_origins
+daily_block_bootstrap = MODULE.daily_block_bootstrap
+output_column = MODULE.output_column
 
 
 def test_output_column_is_horizon_major():
